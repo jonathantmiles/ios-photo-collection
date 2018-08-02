@@ -10,17 +10,10 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        updateViews()
+        setTheme()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -32,14 +25,51 @@ class PhotoDetailViewController: UIViewController {
     }
     */
     
+    
+    
     // MARK: - Button functions
     
     @IBAction func addPhoto(_ sender: Any) {
     }
     
     @IBAction func savePhoto(_ sender: Any) {
+        guard let image = detailPhotoImageView.image,
+            let imageData = UIImagePNGRepresentation(image),
+            let title = detailPhotoTitleTextField.text else { return }
+        if photo == nil {
+            photoController?.createPhoto(withTitle: title, imageData: imageData)
+        } else {
+            guard let photo = photo else { return }
+            photoController?.updatePhoto(for: photo, title: title, imageData: imageData)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
+    // MARK: - Custom functions
+    
+    func setTheme() {
+        let preference: String? = themeHelper?.themePrefeference
+        switch preference {
+        case "Dark":
+            self.view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        case "Orange":
+            self.view.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        default:
+            return
+        }
+    }
+    
+    func updateViews() {
+        if photo != nil {
+            guard let imageData = photo?.imageData,
+                let image = UIImage(data: imageData),
+                let title = photo?.title else { return }
+            detailPhotoImageView.image = image
+            detailPhotoTitleTextField.text = title
+        } else {
+            return
+        }
+    }
     
     // MARK: - Outlets
     
