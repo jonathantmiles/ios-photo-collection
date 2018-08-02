@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		F82C0B5921138EA600807F68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B5821138EA600807F68 /* AppDelegate.swift */; };
-		F82C0B5B21138EA600807F68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B5A21138EA600807F68 /* ViewController.swift */; };
 		F82C0B5E21138EA600807F68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82C0B5C21138EA600807F68 /* Main.storyboard */; };
 		F82C0B6021138EA800807F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82C0B5F21138EA800807F68 /* Assets.xcassets */; };
 		F82C0B6321138EA800807F68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82C0B6121138EA800807F68 /* LaunchScreen.storyboard */; };
 		F82C0B6B21138EE400807F68 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B6A21138EE400807F68 /* Photo.swift */; };
 		F82C0B6D21138F1700807F68 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B6C21138F1700807F68 /* PhotoController.swift */; };
 		F82C0B6F2113918E00807F68 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B6E2113918E00807F68 /* ThemeHelper.swift */; };
+		F82C0B72211395B800807F68 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B71211395B800807F68 /* PhotosCollectionViewController.swift */; };
+		F82C0B74211396AD00807F68 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B73211396AD00807F68 /* PhotosCollectionViewCell.swift */; };
+		F82C0B762113979200807F68 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B752113979200807F68 /* PhotoDetailViewController.swift */; };
+		F82C0B7821139A6100807F68 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C0B7721139A6100807F68 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F82C0B5521138EA600807F68 /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82C0B5821138EA600807F68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F82C0B5A21138EA600807F68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F82C0B5D21138EA600807F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F82C0B5F21138EA800807F68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82C0B6221138EA800807F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +30,10 @@
 		F82C0B6A21138EE400807F68 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F82C0B6C21138F1700807F68 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		F82C0B6E2113918E00807F68 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		F82C0B71211395B800807F68 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		F82C0B73211396AD00807F68 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		F82C0B752113979200807F68 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		F82C0B7721139A6100807F68 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				F82C0B5821138EA600807F68 /* AppDelegate.swift */,
-				F82C0B5A21138EA600807F68 /* ViewController.swift */,
 				F82C0B5C21138EA600807F68 /* Main.storyboard */,
 				F82C0B5F21138EA800807F68 /* Assets.xcassets */,
 				F82C0B6121138EA800807F68 /* LaunchScreen.storyboard */,
@@ -69,8 +74,20 @@
 				F82C0B6A21138EE400807F68 /* Photo.swift */,
 				F82C0B6C21138F1700807F68 /* PhotoController.swift */,
 				F82C0B6E2113918E00807F68 /* ThemeHelper.swift */,
+				F82C0B702113958800807F68 /* ViewControllers */,
 			);
 			path = "Photo Collection";
+			sourceTree = "<group>";
+		};
+		F82C0B702113958800807F68 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F82C0B71211395B800807F68 /* PhotosCollectionViewController.swift */,
+				F82C0B73211396AD00807F68 /* PhotosCollectionViewCell.swift */,
+				F82C0B752113979200807F68 /* PhotoDetailViewController.swift */,
+				F82C0B7721139A6100807F68 /* ThemeSelectionViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F82C0B6B21138EE400807F68 /* Photo.swift in Sources */,
-				F82C0B5B21138EA600807F68 /* ViewController.swift in Sources */,
+				F82C0B7821139A6100807F68 /* ThemeSelectionViewController.swift in Sources */,
 				F82C0B6D21138F1700807F68 /* PhotoController.swift in Sources */,
 				F82C0B6F2113918E00807F68 /* ThemeHelper.swift in Sources */,
+				F82C0B762113979200807F68 /* PhotoDetailViewController.swift in Sources */,
+				F82C0B72211395B800807F68 /* PhotosCollectionViewController.swift in Sources */,
 				F82C0B5921138EA600807F68 /* AppDelegate.swift in Sources */,
+				F82C0B74211396AD00807F68 /* PhotosCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
