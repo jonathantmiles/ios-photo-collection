@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
@@ -30,6 +31,21 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Button functions
     
     @IBAction func addPhoto(_ sender: Any) {
+        let authStatus = PHPhotoLibrary.authorizationStatus()
+        switch authStatus {
+        case .authorized:
+            presentImagePickerController()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (status) in
+                guard status == .authorized else { return }
+                if status == .authorized {
+                    self.presentImagePickerController() } }
+        default:
+            let alert = UIAlertController(title: "Permission Required", message: "Photo Collection neds access to your photos. Please enable access in Settings > Apps > Photo Collection", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                NSLog("The \"Change permsissions in Settings\" alert occurred.")
+            }))
+        }
     }
     
     @IBAction func savePhoto(_ sender: Any) {
@@ -71,10 +87,26 @@ class PhotoDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Photos functions
+    
+    func presentImagePickerController() {
+        if PHPhotoLibrary.authorizationStatus() == .authorized {
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            present(picker, animated: true, completion: nil)
+        } else { return }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        detailPhotoImageView.image = image
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var detailPhotoImageView: UIImageView!
-    
     @IBOutlet weak var detailPhotoTitleTextField: UITextField!
     
     // MARK: - Properties
