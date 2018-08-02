@@ -27,7 +27,7 @@
                             <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="snn-pl-AtW">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="snn-pl-AtW" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="16" y="16" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -64,6 +64,8 @@
                                     <constraint firstItem="f2i-hw-P0I" firstAttribute="top" secondItem="snn-pl-AtW" secondAttribute="top" id="qxi-3B-jLB"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="photoImageView" destination="ymR-J2-dW3" id="kH8-fe-YzW"/>
+                                    <outlet property="photoTitleLabel" destination="tZf-nT-fWR" id="CUW-Jd-A6b"/>
                                     <segue destination="8AF-AR-KvC" kind="show" identifier="ShowDetailSegue" id="7Di-BI-V32"/>
                                 </connections>
                             </collectionViewCell>
@@ -85,10 +87,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="photoImageView" destination="ymR-J2-dW3" id="YEY-DT-j6h"/>
-                        <outlet property="titleLabel" destination="tZf-nT-fWR" id="Vbc-fj-5tf"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us7-Ql-nQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

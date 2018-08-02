@@ -90,7 +90,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+
     
 }
