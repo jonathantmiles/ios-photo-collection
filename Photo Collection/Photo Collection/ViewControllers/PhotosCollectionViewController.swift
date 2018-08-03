@@ -10,9 +10,13 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    override func viewDidLoad() {
+
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        collectionView?.reloadData()
         setTheme()
+        collectionView?.reloadData()
     }
     
     // MARK: - Properties
@@ -26,9 +30,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         guard let preference: String = themeHelper.themePrefeference else { return }
         switch preference {
         case "Dark":
-            self.view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            collectionView?.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         case "Orange":
-            self.view.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            collectionView?.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         default:
             return
         }
@@ -40,13 +44,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "AddPhotoSegue":
-            guard let destVC = segue.destination as? PhotoDetailViewController,
-                let index = collectionView?.indexPathsForSelectedItems?.first?.row else { return }
-            destVC.photo = photoController.photos[index]
+            guard let destVC = segue.destination as? PhotoDetailViewController
+                 else { return }
             destVC.photoController = photoController
             destVC.themeHelper = themeHelper
         case "ShowDetailSegue":
-            guard let destVC = segue.destination as? PhotoDetailViewController else { return }
+            guard let destVC = segue.destination as? PhotoDetailViewController,
+                let index = collectionView?.indexPathsForSelectedItems?.first?.item else { return }
+            destVC.photo = photoController.photos[index]
             destVC.photoController = photoController
             destVC.themeHelper = themeHelper
         case "ThemeSelectSegue":
@@ -66,8 +71,9 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
-        let index = collectionView.indexPathsForSelectedItems?.first?.row
-        cell.photo = photoController.photos[index!]
+//        guard let index0 = collectionView.indexPathsForSelectedItems,
+//            let index1 = index0.first?.item else { fatalError("Error in index") }
+        cell.photo = photoController.photos[indexPath.item]
         
         return cell
     }

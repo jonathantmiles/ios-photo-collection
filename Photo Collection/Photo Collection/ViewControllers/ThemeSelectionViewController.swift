@@ -22,7 +22,6 @@ class ThemeSelectionViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
     // MARK: - Properties
     
     var themeHelper: ThemeHelper?

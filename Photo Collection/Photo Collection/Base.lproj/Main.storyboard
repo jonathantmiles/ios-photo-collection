@@ -81,9 +81,9 @@
                                 <segue destination="rbb-r6-EJX" kind="presentation" identifier="ThemeSelectSegue" id="a74-th-dNG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nu1-jY-C7l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cA6-4Y-Chj">
                             <connections>
-                                <segue destination="8AF-AR-KvC" kind="show" identifier="AddPhotoSegue" id="wd1-d1-iGe"/>
+                                <segue destination="8AF-AR-KvC" kind="show" identifier="AddPhotoSegue" id="4Lw-C9-LJ3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -106,14 +106,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ydg-zE-kWN">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="384.5"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKJ-Ir-leZ">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKJ-Ir-leZ">
                                         <rect key="frame" x="0.0" y="384.5" width="343" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="8AF-AR-KvC" eventType="touchUpInside" id="x6R-V5-EL4"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EhL-jz-K2p">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EhL-jz-K2p">
                                         <rect key="frame" x="0.0" y="414.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -214,6 +214,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7Di-BI-V32"/>
+        <segue reference="4Lw-C9-LJ3"/>
     </inferredMetricsTieBreakers>
 </document>

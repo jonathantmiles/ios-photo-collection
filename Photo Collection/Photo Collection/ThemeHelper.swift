@@ -27,6 +27,7 @@ class ThemeHelper {
     }
     
     var themePrefeference: String? { // holds the current theme preference
-        return themePreferenceKey // which is computed here
+        let themePreference = UserDefaults.standard.string(forKey: themePreferenceKey)
+        return themePreference // which is computed here
     }
 }
